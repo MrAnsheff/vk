@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import './login/login_page.dart';
+
 void main() => runApp(VKFlutter());
 
 class VKFlutter extends StatelessWidget {
@@ -10,7 +12,8 @@ class VKFlutter extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: HomePage(title: 'Home'),
+      // home: HomePage(title: 'Home'),
+      home: LoginPage(),
     );
   }
 }
