@@ -12,7 +12,7 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.blue,
+      backgroundColor: Theme.of(context).primaryColor,
       body: Center(
         child: ListView(
           shrinkWrap: true,
@@ -20,17 +20,15 @@ class _LoginPageState extends State<LoginPage> {
           children: <Widget>[
             TextField(
               decoration: const InputDecoration(
-                border: InputBorder.none,
                 hintText: 'E-mail',
-                contentPadding: const EdgeInsets.all(16),
               ),
               controller: emailController,
             ),
+            const SizedBox(height: 16),
             TextField(
+              obscureText: true,
               decoration: const InputDecoration(
-                border: InputBorder.none,
                 hintText: 'Password',
-                contentPadding: const EdgeInsets.all(16),
               ),
               controller: passwordController,
             )
