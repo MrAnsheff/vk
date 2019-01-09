@@ -11,26 +11,71 @@ class _LoginPageState extends State<LoginPage> {
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
     return Scaffold(
-      backgroundColor: Theme.of(context).primaryColor,
+      backgroundColor: theme.primaryColor,
       body: Center(
         child: ListView(
           shrinkWrap: true,
           padding: const EdgeInsets.symmetric(horizontal: 32),
           children: <Widget>[
-            TextField(
-              decoration: const InputDecoration(
-                hintText: 'E-mail',
+            const FlutterLogo(size: 64),
+            const SizedBox(height: 48),
+            Theme(
+              data: theme.copyWith(
+                primaryColor: Colors.white,
+                hintColor: Colors.white70,
               ),
-              controller: emailController,
+              child: TextField(
+                style: theme.textTheme.subhead.copyWith(color: Colors.white),
+                decoration: InputDecoration(
+                  isDense: true,
+                  labelText: 'E-mail',
+                ),
+                controller: emailController,
+              ),
             ),
             const SizedBox(height: 16),
-            TextField(
-              obscureText: true,
-              decoration: const InputDecoration(
-                hintText: 'Password',
+            Theme(
+              data: theme.copyWith(
+                primaryColor: Colors.white,
+                hintColor: Colors.white70,
               ),
-              controller: passwordController,
+              child: TextField(
+                style: theme.textTheme.subhead.copyWith(color: Colors.white),
+                obscureText: true,
+                decoration: InputDecoration(
+                  isDense: true,
+                  labelText: 'Password',
+                  suffixIcon: GestureDetector(
+                    child: Center(
+                      widthFactor: double.minPositive,
+                      child: Text(
+                        'Forgot?',
+                        style: theme.textTheme.body1.copyWith(
+                          color: Colors.white70,
+                        ),
+                      ),
+                    ),
+                    onTap: () {
+                      debugPrint('Forgot password');
+                    },
+                  ),
+                ),
+                controller: passwordController,
+              ),
+            ),
+            const SizedBox(height: 24),
+            RaisedButton(
+              textColor: Colors.white,
+              child: Text('Log in'),
+              onPressed: () {},
+            ),
+            const SizedBox(height: 128),
+            FlatButton(
+              textColor: Colors.white,
+              child: Text('Sign up'),
+              onPressed: () {},
             )
           ],
         ),

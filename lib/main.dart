@@ -10,8 +10,10 @@ class VKFlutter extends StatelessWidget {
     return MaterialApp(
       title: 'VK Flutter',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primaryColor: Colors.blue[600],
+        buttonColor: Colors.blue[400],
       ),
+      debugShowCheckedModeBanner: false,
       // home: HomePage(title: 'Home'),
       home: LoginPage(),
     );
