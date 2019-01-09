@@ -68,14 +68,18 @@ class _LoginPageState extends State<LoginPage> {
             const SizedBox(height: 24),
             RaisedButton(
               textColor: Colors.white,
-              child: Text('Log in'),
-              onPressed: () {},
+              child: const Text('Log in'),
+              onPressed: () {
+                debugPrint('Log in');
+              },
             ),
             const SizedBox(height: 128),
             FlatButton(
               textColor: Colors.white,
-              child: Text('Sign up'),
-              onPressed: () {},
+              child: const Text('Sign up'),
+              onPressed: () {
+                debugPrint('Sign up');
+              },
             )
           ],
         ),
